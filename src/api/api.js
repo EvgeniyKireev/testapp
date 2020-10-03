@@ -1,22 +1,29 @@
 import * as axios from "axios";
 
-const instance = axios.create({});
-
-const sample = axios.create({
-    withCredentials: true,
-    baseURL: "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=e9746f1ae419712b1e47eeb2c3ce9699&format=json&nojsoncallback=1",
-})
 
 export const api = {
-    //TODO: разобраться почему не приходят данные с сервера!
     getListPhoto() {
-        return sample.get(`&user_id=kostakis&page=2`).then((response) => {
-            return response.photos;
+        return axios({
+            method: 'get',
+            url: "https://api.flickr.com/services/rest",
+            params: {
+                method: "flickr.people.getPhotos",
+                api_key: "4d30c853b319981c1512bcefd093111e",
+                page: 1,
+                format: "json",
+                nojsoncallback: 1,
+                user_id: "kostakis"
+            }
         })
     },
-    getPhoto(serverId, id, secret) {
-        return instance.get(`${serverId}/${id}_${secret}.jpg`).then((response) => {
-            return response.data;
-        });
+    getInfoPhoto(id) {
+        return axios({
+            method: 'get',
+            url: 'https://api.flickr.com/services/rest',
+            api_key: "4d30c853b319981c1512bcefd093111e",
+            format: "json",
+            photo_id: id,
+            nojsoncallback: 1,
+        })
     }
 }
