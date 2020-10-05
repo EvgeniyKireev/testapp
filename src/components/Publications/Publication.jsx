@@ -11,7 +11,7 @@ let Publication = (props) => {
                 <div className={s.data}>{['Дата: ',new Date().getDay(),'.', new Date((props.date) * 1000).getMonth(),'.', new Date((props.date) * 1000).getFullYear()]}</div>
             </div>
         </div>
-        <span>{props.desc}</span>
+        <span>{props.desc ? props.desc : <div>----------------there could be a description----------------</div>}</span>
 
     </div>);
 }
