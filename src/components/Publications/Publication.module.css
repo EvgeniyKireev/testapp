@@ -1,4 +1,36 @@
-img{
-    width: 100px;
-    height: 100px;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+img {
+    width: 300px;
+    height: 200px;
+}
+.pub {
+    margin-left: 50px;
+    font-family: 'PT Sans', sans-serif;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    width: 300px;
+    height: 300px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 70px;
+    padding-top: 10px;
+}
+span {
+    font-size: 70%;
+}
+.info {
+font-weight: bold;
+    display: flex;
+}
+.photo {
+text-align: center;
+}
+.like{
+    height: 20px;
+    width: 20px;
+
+}
+.data {
+    margin-left: 80px;
 }

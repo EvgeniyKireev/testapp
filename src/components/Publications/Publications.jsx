@@ -1,13 +1,17 @@
 import React from "react";
-import Publication from "./Publication";
+import PublicationContainer from "./PublicationContainer";
+import s from "./Publications.module.css";
 
 let Publications = (props) => {
-    let urls = [];
-    if (props.urlsPhotos) {
-        urls = props.urlsPhotos.map((k) => <Publication link={k}/>)
+    let data = []
+    if (props.photos != '') {
+        data = props.photos.map((k) => <PublicationContainer link={k.sizes[6].url} desc={k.text} likes={k.likes.count} date={k.date} id={k.id}/>)
+
     }
-    return (<div>
-        {urls}
+
+
+    return (<div className={s.wrapper}>
+        {data}
     </div>);
 }
 export default Publications;

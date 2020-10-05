@@ -1,0 +1,4 @@
+.wrapper {font-family: 'PT Sans', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+}
